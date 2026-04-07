@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Tilt+Neon&display=swap');
+
+:root {
+    --color-bg-body: linear-gradient(to left, rgb(73, 70, 70), rgb(164, 162, 162), rgb(73, 70, 70));
+    --color-bg-header: rgb(58, 57, 57);
+    --color-bg-card: #ffffff;
+    --color-bg-footer: #000000;
+    --color-bg-table-even: #555555;
+    --color-bg-table-odd: #444444;
+    --color-bg-table-hover: #666666;
+
+    --color-text-main: #ffffff;
+    --color-text-card: #000000;
+    --color-text-muted: gray;
+    --color-text-light: lightgray;
+    --color-text-link: cyan;
+    --color-text-link-hover: rgb(150, 230, 230);
+    --color-text-autor: #888888;
+
+    --space-xs: 5px;
+    --space-sm: 10px;
+    --space-md: 20px;
+    --space-lg: 25px;
+    --space-xl: 30px;
+    --space-xxl: 40px;
+    --radius-md: 10px;
+    --border-style: 1px dotted var(--color-text-muted);
+
+    --shadow-dark: 5px 5px 15px 5px #000000;
+    --shadow-footer: -5px -5px 10px 10px #313131;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: var(--color-text-main);
+    background-image: var(--color-bg-body);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+    margin: auto;
+    width: 90%;
+    display: flex;
+    align-items: flex-start;
+}
+
+section {
+    flex: 3;
+    margin-right: var(--space-md);
+}
+
+aside {
+    flex: 1;
+    position: static; 
+    top: var(--space-md); 
+    align-self: flex-start;
+}
+
+.aside-fixo {
+    position: sticky;
+    top: var(--space-md);
+    align-self: flex-start;
+    margin-top: var(--space-md);
+}
+
+.stats-item {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--space-xs) 0;
+    border-bottom: 1px solid #eee;
+    color: var(--color-text-card);
+}
+
+.card * {
+    margin-bottom: var(--space-sm);
+}
+
+.card {
+    border: var(--border-style);
+    background-color: var(--color-bg-card);
+    color: var(--color-text-card);
+    margin-bottom: var(--space-xxl);
+    margin-left: var(--space-md);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    box-shadow: var(--shadow-dark);
+}
+
+.card a, .card a:visited {
+    color: var(--color-text-muted);
+}
+
+.card a:hover {
+    color: darkgray;
+}
+
+.card ul, .card ol {
+    list-style-position: outside;
+    padding-left: var(--space-md);
+}
+
+.card h2 {
+    border-bottom: var(--border-style);
+    border-left: 10px solid var(--color-text-muted);
+    margin-bottom: var(--space-sm);
+    padding: var(--space-xs);
+}
+
+header {
+    text-align: center;
+    background-color: var(--color-bg-header);
+    color: var(--color-text-main);
+    padding: var(--space-xl);
+    margin-bottom: var(--space-xl);
+    box-shadow: var(--shadow-dark);
+}
+
+header h1 {
+    font-size: 5rem;
+    margin-bottom: var(--space-lg);
+}
+
+nav {
+    margin: var(--space-md);
+}
+
+nav li {
+    display: inline;
+    margin: 15px;
+}
+
+nav a, nav a:visited {
+    text-decoration: none;
+    color: var(--color-text-muted);
+}
+
+nav a:hover {
+    color: var(--color-text-light);
+}
+
+footer {
+    margin-top: var(--space-xl);
+    background-color: var(--color-bg-footer);
+    padding: 50px;
+    box-shadow: var(--shadow-footer);
+}
+
+.qs-light { font-family: "Quicksand", sans-serif; }
+.qs-strong { font-family: "Quicksand", sans-serif; font-weight: bolder; }
+.tilt-light { font-family: "Tilt Neon", sans-serif; }
+.tilt-italic { font-family: "Tilt Neon", sans-serif; font-style: italic; }
+
+.autor-data {
+    text-align: right;
+    color: var(--color-text-autor);
+}
+
+.justificado { text-align: justify; }
+.direita { text-align: right; }
+.centralizado { text-align: center; }
+
+.entre-linhas { line-height: 2; }
+.entre-letras { letter-spacing: 10px; }
+
+a {
+    color: var(--color-text-link);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--color-text-link-hover);
+    text-decoration: underline;
+}
+
+.tabela2 {
+    width: 50%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.tabela2 th {
+    background-color: darkslategray;
+    color: var(--color-text-main);
+}
+
+.tabela2 tr:nth-child(even) {
+    background-color: var(--color-bg-table-even);
+    color: var(--color-text-main);
+}
+
+.tabela2 tr:nth-child(odd) {
+    background-color: var(--color-bg-table-odd);
+    color: var(--color-text-main);
+}
+
+.tabela2 tr:hover {
+    background-color: var(--color-bg-table-hover);
+}
+
+#bm-3 {
+    border: 1px solid orange;
+    padding: var(--space-sm);
+    width: 200px;
+    height: 50px;
+}
+
+@media (max-width: 900px) {
+    article, section, .card {
+        margin: 0;
+    }
+    .card {
+        border-radius: 0;
+        box-shadow: none;
+    }
+    main {
+        flex-direction: column;
+        width: 100%;
+        align-items: stretch;
+    }
+    .aside-fixo {
+        position: static;
+        width: 100%;
+        margin-left: 0;
+        margin-top: var(--space-md);
+    }
+    .menu-hamburger {
+        display: block;
+    }
+
+    #menu-links {
+        display: none;
+        flex-direction: column;
+        background-color: var(--color-bg-header);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: var(--space-md);
+        box-shadow: var(--shadow-dark);
+        z-index: 1000;
+    }
+
+    #menu-links.active {
+        display: flex;
+    }
+
+    nav {
+        position: relative;
+    }
+
+    nav li {
+        display: block;
+        margin: var(--space-sm) 0;
+        text-align: center;
+    }
+}
+
+.playlist-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.music-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-xs);
+    background-color: #f9f9f9;
+    border-radius: var(--radius-md);
+    transition: background 0.3s ease;
+}
+
+.music-item:hover {
+    background-color: #f0f0f0;
+}
+
+.music-item .icon {
+    font-size: 1.5rem;
+}
+
+.music-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.music-info strong {
+    font-size: 0.9rem;
+    color: var(--color-text-card);
+}
+
+.music-info span {
+    font-size: 0.75rem;
+    color: var(--color-text-autor);
+}
+
+.btn-playlist {
+    width: 100%;
+    background-color: #1DB954;
+    color: white;
+    border: none;
+    padding: var(--space-sm);
+    border-radius: var(--radius-md);
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.btn-playlist:hover {
+    opacity: 0.8;
+}
+
+.menu-hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--color-text-main);
+    font-size: 2rem;
+    cursor: pointer;
+    padding: var(--space-xs);
+}
+
+/* Estilização da Tabela Complexa */
+.tabela-complexa {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--space-md) 0;
+    background-color: var(--color-bg-card);
+    color: var(--color-text-card);
+    font-size: 0.9rem;
+}
+
+/* a. Estilo da Legenda (Caption) */
+.tabela-complexa caption {
+    padding: var(--space-sm);
+    font-weight: bold;
+    font-style: italic;
+    color: var(--color-text-autor);
+    caption-side: top; /* Pode ser 'bottom' também */
+}
+
+.tabela-complexa th, 
+.tabela-complexa td {
+    border: 1px solid var(--color-text-light);
+    padding: var(--space-sm);
+    text-align: left;
+}
+
+/* Estilo para o Cabeçalho (thead) */
+.tabela-complexa thead th {
+    background-color: var(--color-bg-header);
+    color: var(--color-text-main);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Estilo para o Rodapé (tfoot) */
+.tabela-complexa tfoot td {
+    background-color: var(--color-bg-table-hover);
+    color: var(--color-text-main);
+    font-weight: bold;
+}
+
+/* Efeito de listras no tbody usando nth-child */
+.tabela-complexa tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.tabela-complexa tbody tr:hover {
+    background-color: rgba(0, 255, 255, 0.1);
+}
